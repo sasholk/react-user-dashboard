@@ -1,0 +1,19 @@
+.button {
+  background-color: #F58932;
+  border-radius: 5px;
+
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
+    background-color: #f87911;
+  }
+}
+
+.userImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 5px;
+}

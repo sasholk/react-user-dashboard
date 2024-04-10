@@ -1,0 +1,16 @@
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  max-width: 300px;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 5px 0 0 5px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
