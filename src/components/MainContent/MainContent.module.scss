@@ -4,3 +4,24 @@
   margin-bottom: 1rem;
   text-transform: uppercase;
 }
+
+.fadeEnter {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fadeEnterActive {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fadeExit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fadeExitActive {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 500ms, transform 500ms;
+}

@@ -1,16 +1,12 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from './UserDropdown.module.scss';
 
-export const UserDropdown = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface Props {
+  links: { name: string; url: string }[];
+}
 
-  const links = [
-    { name: 'Мої курси', url: '#' },
-    { name: 'Профіль', url: '#' },
-    { name: 'Налаштування', url: '#' },
-    { name: 'Історія замовлень', url: '#' },
-    { name: 'Вийти', url: '#' },
-  ];
+export const UserDropdown: React.FC<Props> = ({ links }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={`dropdown ${isOpen ? 'show' : ''} ${styles.button}`}>

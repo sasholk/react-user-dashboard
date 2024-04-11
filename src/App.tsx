@@ -1,15 +1,19 @@
 import { Header } from './components/Header';
 import { MainContent } from './components/MainContent';
-import './App.scss';
+import { Footer } from './components/Footer/Footer';
+
+import styles from './App.module.scss';
 
 function App() {
   return (
-    <div className="container">
+    <div className={`container ${styles.page}`}>
       <Header />
 
-      <main>
+      <main className={styles.wrapper}>
         <MainContent />
       </main>
+
+      <Footer />
     </div>
   )
 }
