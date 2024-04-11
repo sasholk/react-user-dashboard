@@ -20,7 +20,7 @@ To install the project, follow these steps:
 
 ## Usage
 
-To run the project, use the command: `npm start`
+To run the project, use the command: `npm run dev`
 
 ## Contributing
 
