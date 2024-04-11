@@ -1,7 +1,7 @@
 import { LinkItem } from '../LinkItem';
 import { LinkItemSocial } from '../LinkItemSocial';
 import { LinkList } from '../LinkList';
-import { policyLinks, prometheusLinks, prometheusPlusLinks, socialLinks } from './links';
+import { policyLinks, prometheusLinks, prometheusPlusLinks, socialLinks } from './footerConsts';
 
 export const Footer = () => {
   return (
@@ -10,12 +10,22 @@ export const Footer = () => {
         <div className="col">
           <h5 className="widget-title">Prometheus</h5>
 
-          <LinkList links={prometheusLinks} gap={2} LinkComponent={LinkItem} />
+          <LinkList
+            links={prometheusLinks}
+            gap={2}
+            LinkComponent={LinkItem}
+          />
         </div>
+
         <div className="col">
           <h5 className="widget-title">Prometheus+</h5>
 
-          <LinkList links={prometheusPlusLinks} gap={2} LinkComponent={LinkItem} />
+          <LinkList
+            links={prometheusPlusLinks}
+            gap={2}
+            LinkComponent={LinkItem}
+            flexDirection="column"
+          />
         </div>
 
         <div className="col">
@@ -49,11 +59,20 @@ export const Footer = () => {
         <div className="col-12 col-md-8 d-flex flex-column flex-md-row gap-5">
           <LinkItem href="https://prometheus.org.ua/" text="© 2024 Prometheus" />
 
-          <LinkList links={policyLinks} gap={5} LinkComponent={LinkItem} />
+          <LinkList
+            links={policyLinks}
+            gap={5}
+            LinkComponent={LinkItem}
+          />
         </div>
 
         <div className="col-12 col-md-4">
-          <LinkList links={socialLinks} gap={2} LinkComponent={LinkItemSocial} flexDirection={'row'} />
+          <LinkList
+            links={socialLinks}
+            gap={2}
+            LinkComponent={LinkItemSocial}
+            flexDirection={'row'}
+          />
         </div>
       </div>
     </footer>

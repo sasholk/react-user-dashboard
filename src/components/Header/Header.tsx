@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { UserDropdown } from "../UserDropdown/UserDropdown";
-import { links } from './links';
+import { links } from './headerConsts';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

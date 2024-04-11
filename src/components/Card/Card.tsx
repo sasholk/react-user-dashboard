@@ -1,11 +1,11 @@
 import React from 'react';
-import { Col, Dropdown } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
-import styles from './Card.module.scss';
 import { Course } from '../../types/Course';
+import { CardDropdown } from '../CardDropdown';
+import styles from './Card.module.scss';
 
 interface CardProps {
   card: Course;
@@ -41,23 +41,7 @@ export const Card: React.FC<CardProps> = ({ card, onDelete }) => {
             </div>
 
             <div className={`d-flex gap-3 align-items-center p-1 ${styles.actions}`}>
-              <Dropdown>
-                <Dropdown.Toggle variant="outline" id="dropdown-basic">
-                  <FontAwesomeIcon icon={faCog} />
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    href="#/action-1"
-                    onClick={() => onDelete(id)}
-                  >
-                    Відписатися від курсу
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">
-                    Налаштування електронної пошти
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+              <CardDropdown onDelete={onDelete} id={id} />
 
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faTwitter} className="action action-twitter" />

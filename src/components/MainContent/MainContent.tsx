@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Form, Col, Button, Row, InputGroup } from 'react-bootstrap';
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import { fetchCourses } from "../../api/courses";
 import { Card } from "../Card";
 import { Course } from "../../types/Course";
 
 import styles from './MainContent.module.scss';
-import { useSearch } from "../../hooks/useSearch";
+import { filterCoursesBySearchTerm } from "../../services/filterCoursesBySearchTerm";
 
 export const MainContent = () => {
   const [currentCards, setCurrentCards] = useState<Course[]>([]);
@@ -44,7 +46,9 @@ export const MainContent = () => {
     setIsSearchPerformed(false);
   };
 
-  const filteredCards = useSearch(currentCards, currentSearchTerm);
+  const filteredCards = useMemo(() => {
+    return filterCoursesBySearchTerm(currentCards, currentSearchTerm);
+  }, [currentCards, currentSearchTerm]);
 
   return (
     <section className="main-content">
@@ -69,10 +73,14 @@ export const MainContent = () => {
                     ? handleReset
                     : handleSearch}
                 >
-                  {isSearchPerformed ? 'Reset' : 'Search'}
+                  {isSearchPerformed ? <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faSearch} />}
                 </Button>
               </InputGroup>
             </Row>
+
+            {!filteredCards.length && isSearchPerformed && (
+              <div>Нічого не знайдено</div>
+            )}
           </Form>
         </Col>
 
