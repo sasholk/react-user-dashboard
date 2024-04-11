@@ -1,4 +1,8 @@
-# Project Name
+# dashboard
+
+## DEMO
+click to see how it works
+[test-dashboard](https://react-user-dashboard-six.vercel.app/)
 
 ## Description
 
@@ -21,7 +25,3 @@ To run the project, use the command: `npm start`
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## DEMO
-
-[MIT](https://choosealicense.com/licenses/mit/)
