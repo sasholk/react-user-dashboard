@@ -20,7 +20,7 @@ export const Card: React.FC<CardProps> = ({ card, onDelete }) => {
       <article className="card h-100">
         <div className="card-body d-flex flex-column gap-4 flex-md-row">
           <img
-            src="../public/course.png"
+            src="./course.png"
             alt="course-image"
             className={styles.image}
           />
